@@ -1,0 +1,87 @@
+# ==============================================================================
+# MASTER DEPLOYMENT MANIFEST: PROJECT "CAREER_VELOCITY_V2"
+# ==============================================================================
+# REPO: git@github.com:lbaddass/jluisgarciaorobio.git
+# IDENTITY: Jose Luis Garcia Orobio (Growth Engineer / Full Stack)
+# ==============================================================================
+
+configuration:
+  user_profile:
+    full_name: "Jose Luis Garcia Orobio"
+    email: "jluisgarciaor@xperta.social"
+    birth_date: "1997-11-24"
+    location: "Mexico (Remote Compatible)"
+
+  digital_assets: &links
+    portfolio: "https://www.xperta.social/"
+    github: "https://github.com/lbaddass"
+    gitlab: "https://gitlab.com/lbaddass"
+    linkedin: "https://www.linkedin.com/in/jlgarciaorobio/"
+    stackoverflow: "https://stackoverflow.com/users/28878221/luis"
+    aws_badges: "https://skillsprofile.skillbuilder.aws/user/jlgarciaorobio/certification-badges"
+    x_twitter: "https://x.com/lbaddassl"
+
+# ------------------------------------------------------------------------------
+# TARGETED DEPLOYMENT NODES
+# ------------------------------------------------------------------------------
+# INSTRUCTION: Each node represents a specific job application folder.
+
+targets:
+  # JOB 01: WORDPRESS DEVELOPER (Winmill)
+  # STRATEGY: "The DevOps WP Engineer"
+  # ----------------------------------------------------------------------------
+  - id: "winmill_wp_dev"
+    path: "deployments/01_winmill_remote"
+    assets_required:
+      - "README.md (Docker/N8n focus)"
+      - "infrastructure_audit.sh (Mock script showing WP hardening)"
+      - "cv_en_winmill.pdf (Generated from src/latex/en)"
+    ranking_tactic:
+      - "Mention 'Headless WordPress' capability to stand out from plugin installers."
+      - "Offer to set up a staging environment in the first interview."
+
+  # JOB 02: SENIOR SEO SPECIALIST (DaCoders)
+  # STRATEGY: "The Engineer Who Speaks SEO"
+  # ----------------------------------------------------------------------------
+  - id: "dacoders_seo"
+    path: "deployments/02_dacoders_seo"
+    assets_required:
+      - "technical_seo_audit.json (Schema.org/JSON-LD samples)"
+      - "ranking_velocity_calc.py (Python script for keyword tracking)"
+      - "cv_es_seo.pdf (Generated from src/latex/es)"
+    ranking_tactic:
+      - "Focus on 'Programmatic SEO' and 'Server-Side Rendering' advantages."
+      - "Use your GitHub & StackOverflow links to prove technical depth."
+
+  # JOB 03: CREATIVE STRATEGIST (Posiblex) - ***HIGH PRIORITY***
+  # STRATEGY: "Creative Ops Automation"
+  # ----------------------------------------------------------------------------
+  - id: "posiblex_creative"
+    path: "deployments/03_posiblex_creative"
+    assets_required:
+      - "creative_matrix.tsx (The React ASCII Component)"
+      - "automation_workflow.json (n8n schema for creative testing)"
+      - "cv_es_creative.pdf"
+    ranking_tactic:
+      - "Demonstrate high-volume capability (20+ ads/week) via AI automation."
+      - "Reference 'Andromeda' algorithm knowledge in cover letter."
+
+  # JOB 04: BIG TECH TRAINEE (FAANG / Enterprise)
+  # STRATEGY: "High Plasticity / Algorithmic Potential"
+  # ----------------------------------------------------------------------------
+  - id: "big_tech_trainee"
+    path: "deployments/04_big_tech_trainee"
+    assets_required:
+      - "learning_roadmap.md (Velocity of learning showcase)"
+      - "dsa_practice.py (Data Structures & Algorithms snippets)"
+      - "cv_en_general.pdf"
+    ranking_tactic:
+      - "Emphasize AWS Certifications and GitHub activity streak."
+      - "Frame 'Trainee' as 'Unlearning bad habits' + 'Fresh Perspective'."
+
+# ------------------------------------------------------------------------------
+# EXECUTION PROTOCOLS
+# ------------------------------------------------------------------------------
+protocols:
+  update_cv: "cd src/latex && pdflatex main.tex"
+  deploy_microsite: "verce deploy ./deployments/03_posiblex_creative"
